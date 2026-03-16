@@ -14,7 +14,7 @@
 
 set -o pipefail
 
-[ "$(id -u)" != "129" ] && \
+[ "$(whoami)" != "postgres" ] && \
     echo -ne "$0 must be run as user 'postgres', ie.\n  sudo -u postgres $0 ...\n" 1>&2 && \
     exit 1
 
