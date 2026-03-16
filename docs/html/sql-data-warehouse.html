@@ -518,10 +518,10 @@ You will also need to have access to a PostgreSQL user with sufficient privilege
 In this project, the scripts use the PostgreSQL root user <code>postgres</code>.</p>
 </div>
 <div class="paragraph">
-<p>To install PostgreSQL:</p>
+<p><strong>To install PostgreSQL:</strong></p>
 </div>
 <div class="paragraph">
-<p><strong>On Debian based systems:</strong></p>
+<p>On Debian based systems:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -529,21 +529,31 @@ In this project, the scripts use the PostgreSQL root user <code>postgres</code>.
 </div>
 </div>
 <div class="paragraph">
-<p>By default, the service will start automatically after installation.
-If it doesn&#8217;t, you can start it manually using the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>sudo service postgresql start</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>On Fedora:</strong></p>
+<p>On Fedora:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>sudo dnf install postgresql-server
 sudo -u postgres postgresql-setup --initdb</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Ensure the service is running:</strong></p>
+</div>
+<div class="paragraph">
+<p>The service should start automatically after installation. To check:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo service postgresql status</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If it hasn&#8217;t, you can start it manually with the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo service postgresql start</code></pre>
 </div>
 </div>
 </div>
@@ -562,7 +572,7 @@ a couple of supporting gems for PDF and diagrams.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>sudo apt install ruby
-sudo gem install asciidoctor asciidoctor-diagram asciidoctor-pdf</code></pre>
+sudo gem install asciidoctor asciidoctor-diagram asciidoctor-pdf asciidoctor-diagram-plantuml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -587,7 +597,7 @@ for Fedora systems the commands are the same, but replacing <code>apt</code> wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>sudo apt install graphviz plantuml</code></pre>
+<pre class="highlight"><code>sudo apt install graphviz</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -595,13 +605,22 @@ for Fedora systems the commands are the same, but replacing <code>apt</code> wit
 I wanted the latest version of mermaid-cli via npm
 (after installing nvm for the latest version of nodejs).</p>
 </div>
+<div class="paragraph">
+<p>To install <code>nvm</code> and <code>node</code>:</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 source ~/.bashrc || source ~/.zshrc
-nvm install --lts
-
-npm install -g @mermaid-js/mermaid-cli</code></pre>
+nvm install --lts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To install Mermaid:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>npm install -g @mermaid-js/mermaid-cli</code></pre>
 </div>
 </div>
 <div class="sidebarblock">
