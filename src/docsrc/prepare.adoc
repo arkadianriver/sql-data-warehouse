@@ -6,24 +6,32 @@ Before running the data warehouse scripts, ensure that you have PostgreSQL insta
 You will also need to have access to a PostgreSQL user with sufficient privileges to create databases and tables.
 In this project, the scripts use the PostgreSQL root user `postgres`.
 
-To install PostgreSQL:
+*To install PostgreSQL:*
 
-*On Debian based systems:*
+On Debian based systems:
 
 ```
 sudo apt install postgresql
 ```
 
-By default, the service will start automatically after installation.
-If it doesn't, you can start it manually using the following command:
-
-```
-sudo service postgresql start
-```
-
-*On Fedora:*
+On Fedora:
 
 ```
 sudo dnf install postgresql-server
 sudo -u postgres postgresql-setup --initdb
 ```
+
+*Ensure the service is running:*
+
+The service should start automatically after installation. To check:
+
+```
+sudo service postgresql status
+```
+
+If it hasn't, you can start it manually with the following command:
+
+```
+sudo service postgresql start
+```
+
