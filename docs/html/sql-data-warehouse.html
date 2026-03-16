@@ -500,7 +500,7 @@ SQL to extract from CSV files, perform silver transformations, and restructure a
 the gold layer into a star schema.</p>
 </div>
 <div class="paragraph">
-<p>Find the project at <a href="https://github.com/arkadianriver/de-dwh-sql" class="bare">https://github.com/arkadianriver/de-dwh-sql</a>.</p>
+<p>Find the project at <a href="https://github.com/arkadianriver/sql-data-warehouse" class="bare">https://github.com/arkadianriver/sql-data-warehouse</a>.</p>
 </div>
 </div>
 </div>
@@ -520,6 +520,9 @@ In this project, the scripts use the PostgreSQL root user <code>postgres</code>.
 <div class="paragraph">
 <p>To install PostgreSQL:</p>
 </div>
+<div class="paragraph">
+<p><strong>On Debian based systems:</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>sudo apt install postgresql</code></pre>
@@ -534,6 +537,15 @@ If it doesn&#8217;t, you can start it manually using the following command:</p>
 <pre class="highlight"><code>sudo service postgresql start</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><strong>On Fedora:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo dnf install postgresql-server
+sudo -u postgres postgresql-setup --initdb</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -544,11 +556,18 @@ If it doesn&#8217;t, you can start it manually using the following command:</p>
 If you want to modify and rebuild the documentation, install Asciidoctor and
 a couple of supporting gems for PDF and diagrams.</p>
 </div>
+<div class="paragraph">
+<p><strong>For Debian-based systems:</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>sudo apt install ruby
 sudo gem install asciidoctor asciidoctor-diagram asciidoctor-pdf</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>(In this Documentation section,
+for Fedora systems the commands are the same, but replacing <code>apt</code> with <code>dnf</code>.)</p>
 </div>
 <div class="sect2">
 <h3 id="_building_the_documentation">Building the documentation</h3>
@@ -557,7 +576,7 @@ sudo gem install asciidoctor asciidoctor-diagram asciidoctor-pdf</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>docbuild.sh all</code></pre>
+<pre class="highlight"><code>./docbuild.sh all</code></pre>
 </div>
 </div>
 </div>
@@ -605,6 +624,9 @@ Asciidoc. I ended up letting AI have at it.</p>
 <pre class="highlight"><code>sudo apt install tesseract-ocr
 pip install Pillow pytesseract</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>On Fedora, the package is called <code>tesseract</code>.</p>
 </div>
 </dd>
 <dt class="hdlist1">Preparing the specifications table</dt>
@@ -692,7 +714,7 @@ subtasks.)</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="etl-mindmap.png" alt="etl mindmap" width="1674" height="1044">
+<img src="etl-mindmap.png" alt="etl mindmap" width="1600" height="1120">
 </div>
 </div>
 </div>
@@ -793,7 +815,7 @@ Business Users</p></td>
 <h3 id="_pipeline">Pipeline</h3>
 <div class="sidebarblock">
 <div class="content">
-Location in the repository: <a href="https://github.com/arkadianriver/de-dwh-sql/blob/main/pipeline.sh">/pipeline.sh</a>
+Location in the repository: <a href="https://github.com/arkadianriver/sql-data-warehouse/blob/main/pipeline.sh">/pipeline.sh</a>
 </div>
 </div>
 <div class="paragraph">
@@ -880,7 +902,7 @@ esac</code></pre>
 <h3 id="_bronze_layer">Bronze layer</h3>
 <div class="sidebarblock">
 <div class="content">
-Location in the repository: <a href="https://github.com/arkadianriver/de-dwh-sql/blob/main/src/bronze/">/src/bronze/</a>
+Location in the repository: <a href="https://github.com/arkadianriver/sql-data-warehouse/blob/main/src/bronze/">/src/bronze/</a>
 </div>
 </div>
 <div class="paragraph">
@@ -891,7 +913,7 @@ Location in the repository: <a href="https://github.com/arkadianriver/de-dwh-sql
 <h3 id="_silver_layer">Silver layer</h3>
 <div class="sidebarblock">
 <div class="content">
-Location in the repository: <a href="https://github.com/arkadianriver/de-dwh-sql/blob/main/src/silver/">/src/silver/</a>
+Location in the repository: <a href="https://github.com/arkadianriver/sql-data-warehouse/blob/main/src/silver/">/src/silver/</a>
 </div>
 </div>
 <div class="paragraph">
@@ -920,7 +942,7 @@ Location in the repository: <a href="https://github.com/arkadianriver/de-dwh-sql
 <h4 id="_data_integration_analysis_and_sketch">Data integration analysis and sketch</h4>
 <div class="imageblock">
 <div class="content">
-<img src="silver_analysis.png" alt="silver analysis" width="843" height="259">
+<img src="silver_analysis.png" alt="silver analysis" width="809" height="280">
 </div>
 </div>
 </div>
@@ -1099,7 +1121,7 @@ when checking spaces, standardization, and consistency, we find no issues.</p>
 <h3 id="_gold_layer">Gold layer</h3>
 <div class="sidebarblock">
 <div class="content">
-Location in the repository: <a href="https://github.com/arkadianriver/de-dwh-sql/blob/main/src/gold/">/src/gold/</a>
+Location in the repository: <a href="https://github.com/arkadianriver/sql-data-warehouse/blob/main/src/gold/">/src/gold/</a>
 </div>
 </div>
 <div class="paragraph">
@@ -1113,7 +1135,7 @@ to group things logically.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="silver_into_categories.png" alt="silver into categories" width="935" height="301">
+<img src="silver_into_categories.png" alt="silver into categories" width="884" height="326">
 </div>
 </div>
 <div class="paragraph">
@@ -1143,7 +1165,7 @@ WHERE p.product_key IS NULL OR c.customer_key IS NULL;</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="gold_star.png" alt="gold star" width="427" height="560">
+<img src="gold_star.png" alt="gold star" width="414" height="623">
 </div>
 </div>
 <div style="page-break-after: always;"></div>
@@ -1436,7 +1458,7 @@ use cases. It consists of <strong>dimension tables</strong> and <strong>fact tab
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-01-28 19:56:02 -0600
+Last updated 2026-03-15 23:14:41 -0500
 </div>
 </div>
 </body>

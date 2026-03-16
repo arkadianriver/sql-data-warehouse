@@ -8,6 +8,8 @@ In this project, the scripts use the PostgreSQL root user `postgres`.
 
 To install PostgreSQL:
 
+*On Debian based systems:*
+
 ```
 sudo apt install postgresql
 ```
@@ -17,4 +19,11 @@ If it doesn't, you can start it manually using the following command:
 
 ```
 sudo service postgresql start
+```
+
+*On Fedora:*
+
+```
+sudo dnf install postgresql-server
+sudo -u postgres postgresql-setup --initdb
 ```

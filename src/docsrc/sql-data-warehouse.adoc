@@ -2,7 +2,7 @@
 :toc: left
 :toclevels: 3
 
-:code-loc: Location in the repository: https://github.com/arkadianriver/de-dwh-sql/blob/main
+:code-loc: Location in the repository: https://github.com/arkadianriver/sql-data-warehouse/blob/main
 
 
 ****
@@ -13,7 +13,7 @@ The project is to build a Medallion-structured data warehouse with a primary foc
 SQL to extract from CSV files, perform silver transformations, and restructure and integrate
 the gold layer into a star schema.
 
-Find the project at https://github.com/arkadianriver/de-dwh-sql.
+Find the project at https://github.com/arkadianriver/sql-data-warehouse.
 ****
 
 include::prepare.adoc[leveloffset=+1]

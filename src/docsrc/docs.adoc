@@ -4,18 +4,22 @@ The project documentation is written with AsciiDoc (source in the `src/docsrc` f
 If you want to modify and rebuild the documentation, install Asciidoctor and
 a couple of supporting gems for PDF and diagrams.
 
+*For Debian-based systems:*
+
 ```
 sudo apt install ruby
-sudo gem install asciidoctor asciidoctor-diagram asciidoctor-pdf
+sudo gem install asciidoctor asciidoctor-diagram asciidoctor-pdf asciidoctor-diagram-plantuml
 ```
 
+(In this Documentation section,
+for Fedora systems the commands are the same, but replacing `apt` with `dnf`.)
 
 == Building the documentation
 
 To build the documentation, navigate to the `src/docsrc` directory and run:
 
 ```
-docbuild.sh all
+./docbuild.sh all
 ```
 
 
@@ -24,18 +28,22 @@ docbuild.sh all
 For diagrams, some additional packages are required.
 
 ```
-sudo apt install graphviz plantuml
+sudo apt install graphviz
 ```
 
 For mermaid, rather than use `mermaid-cli` from the package manager,
 I wanted the latest version of mermaid-cli via npm
 (after installing nvm for the latest version of nodejs).
 
+To install `nvm` and `node`:
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 source ~/.bashrc || source ~/.zshrc
 nvm install --lts
+```
 
+To install Mermaid:
+```
 npm install -g @mermaid-js/mermaid-cli
 ```
 
@@ -53,6 +61,8 @@ For OCR image text extraction, Tesseract and the Python Pillow and pytesseract l
 sudo apt install tesseract-ocr
 pip install Pillow pytesseract
 ```
++
+On Fedora, the package is called `tesseract`.
 
 Preparing the specifications table::
 +
